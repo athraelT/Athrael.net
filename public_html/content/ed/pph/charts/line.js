@@ -1,10 +1,14 @@
-function drawLineChart(graphDataList, activity) {
+function drawLineChart(graphDataList, activity, selectedPowers) {
 
     var series = [];
+    var colors = [];
     var categories = [];
 
+
     $.each(graphDataList, function (index, value) {
-        if (value[0] !== "Analysis") {
+        if (jQuery.inArray(value[0], selectedPowers) !== -1)
+        {
+            colors.push(powerColorList[value[0]]);
             series.push({
                 name: graphDataList[index][0],
                 data: graphDataList[index][1]
@@ -19,10 +23,7 @@ function drawLineChart(graphDataList, activity) {
         chart: {
             backgroundColor: 'rgba(255, 255, 255, 0.1)'
         },
-        colors: [powerColorList["Hudson"], powerColorList["Winters"], powerColorList["Arissa"],
-            powerColorList["Aisling"], powerColorList["Torval"], powerColorList["Patreus"],
-            powerColorList["Mahon"], powerColorList["Sirius"], powerColorList["Archon"],
-            powerColorList["Antal"]],
+        colors: colors,
         legend: {
             enabled: true
         },
@@ -54,7 +55,6 @@ function drawLineChart(graphDataList, activity) {
         tooltip: {
             headerFormat: 'Power: <b>{series.name}</b><br>',
             pointFormat: 'Score: <b>{point.y}</b>'
-                    //pointFormat: 'Cycle: <b>{point.x}</b>, Score: <b>{point.y}</b>'
         },
         series: series
     });

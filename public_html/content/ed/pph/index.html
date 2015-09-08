@@ -35,8 +35,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-
         <title>Powerplay Herald</title>
+
+        <!-- jQuery JS (must be here for S2 to work) -->
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
         <!-- JQuery UI CSS -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -51,6 +53,9 @@
         <link href="css/base.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- Bootstrap Multiselect CSS -->
+        <link rel="stylesheet" href="addons/ms/bootstrap-multiselect.css" type="text/css"/>        
 
         <!-- Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -140,22 +145,21 @@
                             Power Ranking allows the player to choose a Powerplay activity and view a chart with the performance of 
                             each Power leader in that activity. Data is available since Cycle 2 and is updated weekly.
                             <hr>               
-                        </div>
-                        <!--
-                        <select multiple="multiple">
-                            <option value="ALL" selected>ALL</option>            
-                            <option value="Hudson">Hudson</option>
-                            <option value="Winters">Winters</option>
-                            <option value="Arissa">Arissa</option>     
-                            <option value="Aisling">Aisling</option>  
-                            <option value="Torval">Torval</option>  
-                            <option value="Patreus">Patreus</option>  
-                            <option value="Mahon">Mahon</option>  
-                            <option value="Sirius">Sirius</option>  
-                            <option value="Archon">Archon</option>  
-                            <option value="Antal">Antal</option>  
+                        </div>                        
+                        <em>Select Powers: </em><br />
+                        <select multiple="multiple" id="example"> 
+                            <option value="Hudson" selected>Hudson</option>
+                            <option value="Winters" selected>Winters</option>
+                            <option value="Arissa" selected>Arissa</option>     
+                            <option value="Aisling" selected>Aisling</option>  
+                            <option value="Torval" selected>Torval</option>  
+                            <option value="Patreus" selected>Patreus</option>  
+                            <option value="Mahon" selected>Mahon</option>  
+                            <option value="Sirius" selected>Sirius</option>  
+                            <option value="Archon" selected>Archon</option>  
+                            <option value="Antal" selected>Antal</option>  
                         </select>                    
-                        -->
+                        <br /><br />
                         <div class="btn-group btn btn-default">
                             <a id="actA" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                 Select Activity Chart
@@ -217,8 +221,7 @@
             </div>
         </footer>
 
-        <!-- jQuery -->
-        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- jQueryUI -->
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
@@ -229,6 +232,9 @@
         <script src="data/cycle_data.js"></script>
         <script src="data/cycle_analysis.js"></script>
         <script src="charts/line.js"></script>
+
+        <!-- Bootstrap Multiselect JS: -->
+        <script type="text/javascript" src="addons/ms/bootstrap-multiselect.js"></script>        
 
         <!-- Latest HighCharts -->
         <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -242,16 +248,22 @@
         <script src="js/jquery.dataTables.min.js"></script>
 
         <!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-47296423-6', 'auto');
-  ga('send', 'pageview');
-
-</script>    
+            ga('create', 'UA-47296423-6', 'auto');
+            ga('send', 'pageview');
+        </script>    
 
     </body>
 </html>

@@ -27,7 +27,6 @@ var graphDataList = [];
 var graphData = [];
 var powerColorList = [];
 
-
 function print(msg) {
     // shows console msg if debug is on else does nothing
     if (typeof console !== 'undefined') {
@@ -42,7 +41,7 @@ function initTabs() {
     });
 }
 
-function initpowerColorList() {
+function initPowerColorList() {
     powerColorList["Hudson"] = "#fc0100";
     powerColorList["Winters"] = "#ff8100";
     powerColorList["Arissa"] = "#7e02f6";
@@ -72,13 +71,19 @@ var Analysis = function (name) {
     this["data"] = {};
 }
 
+function initMultiSelect() {
+    $('#example').multiselect({
+        buttonWidth: '240',
+        includeSelectAllOption: true
+    });
+}
+
 function initAnalysis() {
     elementList["Overview"] = new Analysis("Overview");
     elementList["Intro"] = new Analysis("Intro");
     elementList["Main"] = new Analysis("Main");
     elementList["Outro"] = new Analysis("Outro");
 }
-
 
 function initPower() {
     elementList["Hudson"] = new Power("Hudson");
@@ -142,6 +147,7 @@ function updateAnalysis() {
         });
     });
 }
+
 function writeAnalysis() {
     var numCycles = 1;
 
@@ -193,27 +199,27 @@ function writeAnalysis() {
 }
 
 $("#about-nav").on("click", function () {
-    alterDiv("#about-div");
+    switchDiv("#about-div");
 });
 
 $("#prank-nav").on("click", function () {
-    alterDiv("#prank-div");
+    switchDiv("#prank-div");
 });
 
 $("#apred-nav").on("click", function () {
-    alterDiv("#apred-div");
+    switchDiv("#apred-div");
 });
 
 $(document).on("click", "#proceed-to-prank", function () {
-    alterDiv("#prank-div");
+    switchDiv("#prank-div");
 });
 
 $(document).on("click", "#proceed-to-apred", function () {
-    alterDiv("#apred-div");
+    switchDiv("#apred-div");
 });
 
 $(document).on("click", "#back-to-prank", function () {
-    alterDiv("#prank-div");
+    switchDiv("#prank-div");
 });
 
 $('.dropdown-menu a').click(function (a) {
@@ -232,10 +238,15 @@ $('.dropdown-menu a').click(function (a) {
             graphDataList.push([name, graphData]);
         }
     });
-    drawLineChart(graphDataList, activity);
+    var selectedPowers = $('#example').val();
+
+    if (selectedPowers === null)
+        swal("Error!", "Please Enter one or more powers to display the chart.")
+    else
+        drawLineChart(graphDataList, activity, selectedPowers);
 });
 
-function alterDiv(divID) {
+function switchDiv(divID) {
     var divList = ['#about-div', '#prank-div', '#apred-div'];
     $.each(divList, function (index, value) {
         if (value === divID)
@@ -247,9 +258,8 @@ function alterDiv(divID) {
 }
 
 $(document).ready(function () {
-
-    initpowerColorList();
-
+    initMultiSelect();
+    initPowerColorList();
     initPower();
     initPowerActivities();
 
