@@ -30,13 +30,6 @@ $("#pre-selector").change(function () {
     $.getScript("js/gw2PriceApiCall.js", function () {
     });
 });
-/*
- $('select[id="selectSims"]').change(function () {
- 
- });
- */
-
-
 
 $(document).ready(function () {
     $("#submitButton").unbind('click').on("click", function () {
@@ -62,8 +55,8 @@ $(document).ready(function () {
         }
         else {
             var totalPrecursorsCrafted = 0;
-            
-            
+
+
             for (i = 0; i < sims; i++) {
 
                 var gold = investment;
@@ -135,12 +128,8 @@ $(document).ready(function () {
                 });
             }
         }
-
     });
 });
-
-
-
 
 getStats = function (a) {
     var r = {

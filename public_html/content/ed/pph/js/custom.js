@@ -81,8 +81,9 @@ function initMultiSelect() {
 function initAnalysis() {
     elementList["Overview"] = new Analysis("Overview");
     elementList["Intro"] = new Analysis("Intro");
-    elementList["Main"] = new Analysis("Main");
-    elementList["Outro"] = new Analysis("Outro");
+    elementList["Body"] = new Analysis("Body");
+    elementList["Conclusion"] = new Analysis("Conclusion");
+    elementList["Writer"] = new Analysis("Writer");
 }
 
 function initPower() {
@@ -122,8 +123,9 @@ function updatePowerActivity(cycle, activity, data) {
 function updateAnalysisElements(cycle, analysis_data) {
     elementList["Overview"]["data"][cycle] = analysis_data.Overview;
     elementList["Intro"]["data"][cycle] = analysis_data.Intro;
-    elementList["Main"]["data"][cycle] = analysis_data.Main;
-    elementList["Outro"]["data"][cycle] = analysis_data.Outro;
+    elementList["Body"]["data"][cycle] = analysis_data.Body;
+    elementList["Conclusion"]["data"][cycle] = analysis_data.Conclusion;
+    elementList["Writer"]["data"][cycle] = analysis_data.Writer;
 
     elementList["Hudson"]["data"][cycle] = analysis_data.Hudson;
     elementList["Winters"]["data"][cycle] = analysis_data.Winters;
@@ -152,6 +154,7 @@ function writeAnalysis() {
     var numCycles = 1;
 
     var cycleData = "";
+    cycleData += "<div class='scroller'>";
     cycleData += "<ul>";
 
     $.each(elementList["Mahon"]["data"], function (cycle, data) {
@@ -162,6 +165,7 @@ function writeAnalysis() {
         cycleData += "<li><a href='#tab-" + i + "'>Cycle " + i + "</a></li>";
 
     cycleData += "</ul>";
+    cycleData += "</div>";
     $("#tabs").append(cycleData);
 
     $.each(elementList["Mahon"]["data"], function (cycle, data) {
@@ -173,25 +177,37 @@ function writeAnalysis() {
         cycleData += elementList["Overview"]["data"][cycle] + "<hr>";
 
         cycleData += "<div class='powers-div'>";
+        var powersExist = false;
         $.each(elementList, function (index, value) {
             if (elementList[index]["data"][cycle] !== "" && value.type === "Power") {
                 cycleData += "<h3 class='powers-h' style='color:" + powerColorList[index] + "'>" + index + "</h3>";
                 cycleData += "<p class='powers-p'><img class = 'powers-img'src='img/powers/" + index + ".jpg'> " + elementList[index]["data"][cycle] + "</p>";
+                powersExist = true;
             }
         });
         cycleData += "</div>";
 
-        //cycleData += "<h3 class='powers-h'>Intro</h3>";
-        //cycleData += elementList["Intro"]["data"][cycle] + "<hr>";
-
         cycleData += "<div class='powers-div'>";
-        cycleData += "<h3 class='powers-h'>Guesses & Predictions</h3>";
-        cycleData += elementList["Main"]["data"][cycle];
+        /*  Intro excluded for the time being.
+         cycleData += "<h3 class='powers-h'>Intro</h3>";
+         cycleData += elementList["Intro"]["data"][cycle];
+         */
+        if (powersExist)
+            cycleData += "<hr>";
 
-        if (elementList["Outro"]["data"][cycle] !== "") {
+        cycleData += "<h3 class='powers-h'>Guesses & Predictions</h3>";
+        cycleData += elementList["Body"]["data"][cycle];
+        cycleData += "<hr>";
+
+        if (elementList["Conclusion"]["data"][cycle] !== "") {
             cycleData += "<h3 class='powers-h'>Final Words</h3>";
-            cycleData += elementList["Outro"]["data"][cycle];
+            cycleData += elementList["Conclusion"]["data"][cycle];
+            cycleData += "<hr>";
         }
+
+        cycleData += "<h3 class='powers-h'>Written By</h3>";
+        cycleData += "<div align='center'>" + elementList["Writer"]["data"][cycle] + "</div>";
+
         cycleData += "</div>";
 
         $("#tabs").append(cycleData);

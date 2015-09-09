@@ -2,7 +2,6 @@ function drawBarGraph(graphData, message) {
     $('#container').highcharts({
         chart: {
             type: 'column',
-            //width: $('#container').width(),
             renderTo: 'histogram', defaultSeriesType: 'bar',
             backgroundColor: 'rgba(255, 255, 255, 0.1)'
         },
@@ -48,7 +47,6 @@ function drawBarGraph(graphData, message) {
                     rotation: -90,
                     color: '#E0E0E0',
                     align: 'right',
-                    //format: '{point.y:.1f}', // one decimal
                     y: 10, // 10 pixels down from the top 
                     style: {
                         fontSize: '13px',

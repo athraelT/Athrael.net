@@ -38,7 +38,7 @@ $.getJSON('https://api.guildwars2.com/v2/commerce/prices?wiki=1&ids=' + ids).don
                 valueObjectMap[item.id].buyOrder = item.buys.unit_price;
                 valueObjectMap[item.id].sellOrder = item.sells.unit_price;
             }
-            
+
             $.each(elements[item.id], function () {
                 if (this.info == 'buy') {
                     this.elem.innerHTML = getCurrencyFormat(item.buys.unit_price, "html");

@@ -20,8 +20,6 @@ body{
 .settingsText{
     color: #E0E0E0;	
     text-shadow: 2px 2px 4px #000000;
-    //  Blur
-    //text-shadow: 2px 2px 8px #000000;
 }  
 
 .group-elements { 
