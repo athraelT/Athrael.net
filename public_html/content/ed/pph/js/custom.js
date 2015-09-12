@@ -173,8 +173,10 @@ function writeAnalysis() {
         cycleData += "<div id='tab-" + cycle + "' class='tab-panel'>";
         //cycleData += "<h1 class='powers-h' align='center'><u>Cycle " + cycle + "</u></h1><hr>";
 
-        cycleData += "<h3 class='powers-h'>Overview</h3>";
-        cycleData += elementList["Overview"]["data"][cycle] + "<hr>";
+        if (elementList["Overview"]["data"][cycle] !== "") {
+            cycleData += "<h3 class='powers-h'>Overview</h3>";
+            cycleData += elementList["Overview"]["data"][cycle] + "<hr>";
+        }
 
         cycleData += "<div class='powers-div'>";
         var powersExist = false;
@@ -187,17 +189,24 @@ function writeAnalysis() {
         });
         cycleData += "</div>";
 
-        cycleData += "<div class='powers-div'>";
+        //cycleData += "<div class='powers-div'>";
+
+        cycleData += "<div>";
         /*  Intro excluded for the time being.
          cycleData += "<h3 class='powers-h'>Intro</h3>";
          cycleData += elementList["Intro"]["data"][cycle];
          */
-        if (powersExist)
-            cycleData += "<hr>";
 
-        cycleData += "<h3 class='powers-h'>Guesses & Predictions</h3>";
-        cycleData += elementList["Body"]["data"][cycle];
-        cycleData += "<hr>";
+        /*  This doesn't work
+         if (powersExist)
+         cycleData += "<hr>";
+         */
+
+        if (elementList["Body"]["data"][cycle] !== "") {
+            cycleData += "<h3 class='powers-h'>Guesses & Predictions</h3>";
+            cycleData += elementList["Body"]["data"][cycle];
+            cycleData += "<hr>";
+        }
 
         if (elementList["Conclusion"]["data"][cycle] !== "") {
             cycleData += "<h3 class='powers-h'>Final Words</h3>";
@@ -274,6 +283,7 @@ function switchDiv(divID) {
 }
 
 $(document).ready(function () {
+
     initMultiSelect();
     initPowerColorList();
     initPower();

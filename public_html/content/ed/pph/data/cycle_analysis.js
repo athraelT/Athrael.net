@@ -230,24 +230,40 @@ var cycle_analysis = [{
                 "Conclusion": "Fun fact! Hudson's supporters have sent preparation to 523 systems in cycle #13. The other Powers put together sent prep to just around 400. This isn't the first time Hudson's fine pilots decided their time would be best spent delivering 10 prep to half the systems in inhabited space, but I think this is the most extensive preparation network to date. I just thought it would be poor form to finish on a rant :D. Thanks for reading everyone, and thanks for your kindness over the last 3 months. See you out in the black.",
                 "Writer": "Cadoc"
             }],
-        /*
-         "X": [{
-         "Overview": "",
-         "Hudson": "",
-         "Winters": "",
-         "Arissa": "",
-         "Aisling": "",
-         "Torval": "",
-         "Patreus": "",
-         "Mahon": "",
-         "Sirius": "",
-         "Archon": "",
-         "Antal": "",
-         "Intro": "",
-         "Main": "",
-         "Body": "",
-         "Writer": ""
-         }]
-         */
-
+        "14": [{
+                "Overview": "This week’s summary on each power will be quite brief. I'm running short on personal time and having already written the GalNet article summarizing activity this week, I’m going to cop-out and copy-paste it here for those who may not have seen it yet. Additionally, summaries from representatives of various powers have been quoted where applicable in statements provided to me or shared publicly on their respective subreddits.",
+                "Hudson": "Zachary Hudson has demonstrated an ability to stand firm against overwhelming opposition. Undermining in over thirty systems was cancelled and extended the protection of the Federation fleet to several more, and Hudson’s rise to second place is well warranted this week.",
+                "Winters": "Felicia Winters, much like Hudson, weathered above-average undermining, but in spite of this she proved her resilience by providing humanitarian aid to one star cluster while maintaining a comfortable command capital reserve.",
+                "Arissa": "Arissa Lavigny-Duval’s rising administrative costs, accompanied by shrewd undermining, has led to turmoil in seven systems this week. An increased emphasis on meaningful fortification is clearly needed to maintain the senator’s sway over her vast territory.",
+                "Aisling": "Aisling Duval has once again topped the powerplay rankings, as extraordinarily low opposition to the people’s princess, combined with sufficient fortification, has allowed her to excel above all others this week.",
+                "Torval": "Zemina Torval has made a recovery from recent weeks of turmoil and the reduction of her portfolio. The senator now looks to end a long period of contraction in her enterprises through the acquisition of key systems.",
+                "Patreus": "Denton Patreus, ever the smooth operator, balanced his budgets nearly perfectly this week. Evading a deficit, his fleets now occupy control spheres in two additional locations.",
+                "Mahon": "Edmund Mahon has again guided the Alliance into prosperity. Careful fortification has secured Alliance borders, although the Alliance saw more opposition than the Empire. Prime Minister Mahon is now poised to offer citizenship to several key systems in the coming week.",
+                "Sirius": "Li Yong-Rui has led Sirius Gov back into the black. Shrewd leadership, cutbacks, and the diligent labours of Sirius representatives have yielded a large command capital reserve. With an optimistic outlook, SiriusGov is poised to extend its influence once more in its corner of space.",
+                "Archon": "Archon Delaine’s lean forces have again amassed enough command capital to stir up insurrections in several systems. Although the Kumo Crew was rebuffed in its attempts to overthrow Federation and Imperial systems, a surge in criminal activity was reported in several more systems.",
+                "Antal": "Pranav Antal’s quiet commune succeeded in sharing the vision of Utopia with the inhabitants of Miki and the surrounding systems, and his people now hope to bring these systems into the fold. With no systems undermined this week, Pranav’s people are clearly the embodiment of Utopia.",
+                "Intro": "This post is surely riddled with typographical and grammatical errors. I reserve the right to shadow-edit to make necessary corrections without notification. Same goes for the linked data. Please feel free to point out any issues you discover. It will only serve to make these posts better.",
+                "Body": "",
+                "Conclusion": "Special thanks to the FD community representatives, Zac Antonaci in particular, for allowing us to continue this community project. Thank you for sharing the data so it does not need to be manually collected on our end. /u/Cadoc, I now have an even greater appreciation for all the work you have done through the weeks and months of Powerplay. This is far more work than I anticipated, and I haven’t even scratched the surface of what you did in your regular analyses. You sir are my hero.",
+                "Writer": "Corrigendum"
+            }]
+                /*
+                 "X": [{
+                 "Overview": "",
+                 "Hudson": "",
+                 "Winters": "",
+                 "Arissa": "",
+                 "Aisling": "",
+                 "Torval": "",
+                 "Patreus": "",
+                 "Mahon": "",
+                 "Sirius": "",
+                 "Archon": "",
+                 "Antal": "",
+                 "Intro": "",
+                 "Main": "",
+                 "Body": "",
+                 "Writer": ""
+                 }]
+                 */
     }];

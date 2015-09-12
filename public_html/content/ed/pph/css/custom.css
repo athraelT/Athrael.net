@@ -1,24 +1,3 @@
-/*
-#params{
-    margin-left: 30%;
-}
-
-div#params > label{
-    text-align: left;
-    width: 30%;
-}
-
-label {
-    display: inline-block; width: 5em;
-}
-fieldset div {
-    margin-bottom: 2em;
-}
-fieldset .help {
-    display: inline-block;
-}
-*/
-
 .ui-tooltip {
     width: 210px;
 }
@@ -90,4 +69,3 @@ fieldset .help {
 #tabs .ui-tabs-nav .ui-state-active a { 
     color: #337ab7; 
 }
-

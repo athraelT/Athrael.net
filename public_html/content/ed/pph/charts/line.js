@@ -6,8 +6,10 @@ function drawLineChart(graphDataList, activity, selectedPowers) {
 
 
     $.each(graphDataList, function (index, value) {
+        //  If power selected to be displayed.
         if (jQuery.inArray(value[0], selectedPowers) !== -1)
         {
+            //print(value);
             colors.push(powerColorList[value[0]]);
             series.push({
                 name: graphDataList[index][0],

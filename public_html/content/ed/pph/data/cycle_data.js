@@ -721,4 +721,11 @@ var cycle_data = [{
             {"Activity": "Undermining", "Hudson": 976320, "Winters": 1294910, "Arissa": 233830, "Aisling": 54810, "Torval": 775110, "Patreus": 246930, "Mahon": 1266090, "Sirius": 957070, "Archon": 1111300, "Antal": 199975},
             {"Activity": "Opposition", "Hudson": 0, "Winters": 0, "Arissa": 48985, "Aisling": 1380, "Torval": 57580, "Patreus": 0, "Mahon": 0, "Sirius": 2670, "Archon": 303390, "Antal": 141220}
         ],
+        "14": [
+            {"Activity": "Preparation", "Hudson": 74881, "Winters": 34018, "Arissa": 201719, "Aisling": 7099, "Torval": 44106, "Patreus": 17599, "Mahon": 136247, "Sirius": 975, "Archon": 75246, "Antal": 24713},
+            {"Activity": "Fortification", "Hudson": 365560, "Winters": 220182, "Arissa": 439575, "Aisling": 438344, "Torval": 126721, "Patreus": 107615, "Mahon": 225854, "Sirius": 182747, "Archon": 83842, "Antal": 94726},
+            {"Activity": "Expansion", "Hudson": 810091, "Winters": 16712, "Arissa": 2417374, "Aisling": 61877, "Torval": 0, "Patreus": 172430, "Mahon": 0, "Sirius": 0, "Archon": 120898, "Antal": 145198},
+            {"Activity": "Undermining", "Hudson": 982455, "Winters": 1106365, "Arissa": 309950, "Aisling": 20030, "Torval": 568005, "Patreus": 246855, "Mahon": 1341630, "Sirius": 616030, "Archon": 1082125, "Antal": 69685},
+            {"Activity": "Opposition", "Hudson": 110170, "Winters": 10860, "Arissa": 101055, "Aisling": 74655, "Torval": 0, "Patreus": 13620, "Mahon": 0, "Sirius": 0, "Archon": 279210, "Antal": 174090}
+        ],
     }];
