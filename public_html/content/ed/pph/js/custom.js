@@ -247,10 +247,38 @@ $(document).on("click", "#back-to-prank", function () {
     switchDiv("#prank-div");
 });
 
-$('.dropdown-menu a').click(function (a) {
+$('#drop-b a').click(function (a) {
+    a.preventDefault();
+    var activity = $(this).text();
+    var prepList = [], fortList = [], opList = [], undList = [], expList = [];
+
+    $("#actB").html(activity);
+    $("#actA").html("Single Activity");
+
+    $.each(elementList, function (name, value) {
+        graphData = [];
+
+        if (value.type === "Power") {
+            prepList.push(value["Preparation"][Object.keys(value["Preparation"]).length+1]);
+            fortList.push(value["Fortification"][Object.keys(value["Fortification"]).length+1]);
+            opList.push(value["Opposition"][Object.keys(value["Opposition"]).length+1]);
+            expList.push(value["Expansion"][Object.keys(value["Expansion"]).length+1]);
+            undList.push(value["Undermining"][Object.keys(value["Undermining"]).length+1]);
+        }
+    });
+    var selectedPowers = $('#example').val();
+    
+    if (selectedPowers === null)
+        swal("Error!", "Please Enter one or more powers to display the chart.")
+    else
+        drawStackedChart(selectedPowers, activity, prepList, fortList, expList, opList, undList);
+});
+
+$('#drop-a a').click(function (a) {
     a.preventDefault();
     var activity = $(this).text();
     $("#actA").html(activity);
+    $("#actB").html("Multi-Activity");
     graphDataList = [];
 
     $.each(elementList, function (name, value) {

@@ -1,22 +1,20 @@
-function drawStackedChart(graphDataList, activity, selectedPowers) {
-    var prepList = [], fortList = [], expList = [];
+function drawStackedChart(selectedPowers, activity, prepList, fortList, expList, opList, undList) {
+
+    var series = [];
     var colors = [];
 
-    $.each(graphDataList, function (index, value) {
-        //  If power selected to be displayed.
-        if (jQuery.inArray(value[0], selectedPowers) !== -1)
-        {
-            colors.push(powerColorList[value[0]]);
-            /*
-             Push data for each member.
-             
-             prepList.push();
-             fortList.push();
-             expList.push();
-             
-             */
-        }
-    });
+    if (activity === "Preparation, Fortification & Expansion") {
+        series.push({name: "Preparation", data: prepList}, {name: "Fortification", data: fortList}, {name: "Expansion", data: expList});
+        colors.push("#8FBC8F", "#BDB76B", "#B22222");
+    }
+    else if (activity === "Undermining & Opposition") {
+        series.push({name: "Undermining", data: undList}, {name: "Opposition", data: opList});
+        colors.push("#BDB76B", "#FF8C00");
+    }
+    else if (activity === "Preparation & Fortification") {
+        series.push({name: "Preparation", data: prepList}, {name: "Fortification", data: fortList});
+        colors.push("#8FBC8F", "#BDB76B");
+    }
 
     $(function () {
         $('#container').highcharts({
@@ -24,9 +22,9 @@ function drawStackedChart(graphDataList, activity, selectedPowers) {
                 type: 'column',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)'
             },
-            //colors: colors,
+            colors: colors,
             title: {
-                text: 'Stacked column chart'
+                text: activity
             },
             xAxis: {
                 categories: selectedPowers
@@ -34,7 +32,7 @@ function drawStackedChart(graphDataList, activity, selectedPowers) {
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Total fruit consumption'
+                    text: 'Activity'
                 },
                 stackLabels: {
                     enabled: true,
@@ -71,16 +69,7 @@ function drawStackedChart(graphDataList, activity, selectedPowers) {
                     }
                 }
             },
-            series: [{
-                    name: 'Preparation',
-                    data: [5, 3, 4]
-                }, {
-                    name: 'Fortification',
-                    data: [2, 2, 3]
-                }, {
-                    name: 'Expansion',
-                    data: [3, 4, 4]
-                }]
+            series: series
         });
     });
 }
